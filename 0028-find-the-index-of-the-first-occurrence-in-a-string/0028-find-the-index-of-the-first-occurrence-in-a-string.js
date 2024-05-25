@@ -4,5 +4,12 @@
  * @return {number}
  */
 var strStr = function(haystack, needle) {
-    return haystack.indexOf(needle);
+    const len = needle.length;
+    for (let i=0; i<haystack.length; i++) {
+        const str = haystack.slice(i, i+len);
+        if (str === needle) {
+            return i;
+        }
+    }
+    return -1;
 };
